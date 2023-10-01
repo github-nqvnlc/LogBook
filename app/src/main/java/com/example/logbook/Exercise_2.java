@@ -107,7 +107,7 @@ public class Exercise_2 extends AppCompatActivity {
 
             @Override
             public void onError(Exception e) {
-                Toast.makeText(Exercise_2.this, "Url is incorrect!", Toast.LENGTH_LONG).show();
+                Toast.makeText(Exercise_2.this, "Url is not Image!", Toast.LENGTH_LONG).show();
                 listImage.remove(index);
                 index = listImage.size() - 1;
                 display();

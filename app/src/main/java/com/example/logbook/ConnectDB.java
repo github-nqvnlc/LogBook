@@ -9,13 +9,15 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
+import java.sql.Blob;
+
 public class ConnectDB extends SQLiteOpenHelper {
     private Context context;
     private static final String DATABASE_NAME = "Image.db";
     private static final String TABLE_IMAGE = "images";
 
     public ConnectDB(@Nullable Context context) {
-        super(context, DATABASE_NAME, null, 1);
+        super(context, DATABASE_NAME, null, 2);
         this.context = context;
     }
 
@@ -53,5 +55,15 @@ public class ConnectDB extends SQLiteOpenHelper {
             cursor = db.rawQuery(queryDB, null);
         }
         return cursor;
+    }
+
+    public void deleteUrlImage(String urlImage){
+        SQLiteDatabase db = this.getWritableDatabase();
+        long result = db.delete(TABLE_IMAGE, "urlImage=?", new String[]{urlImage});
+        if (result == -1) {
+            Toast.makeText(context, "Failed to Delete", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(context, "Delete Url Image is successful", Toast.LENGTH_SHORT).show();
+        }
     }
 }

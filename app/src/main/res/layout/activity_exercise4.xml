@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Exercise_3">
+    tools:context=".Exercise_4">
 
     <ImageView
         android:id="@+id/imageView"
@@ -71,13 +71,22 @@
 
     <Button
         android:id="@+id/addImageBtn"
-        android:layout_width="wrap_content"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Add url image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/urlImageLink" />
+
+    <Button
+        android:id="@+id/openCameraBtn"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:text="Open Camera"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addImageBtn" />
 
     <ImageButton
         android:id="@+id/btnDelete"
@@ -88,4 +97,5 @@
         android:src="@drawable/ic_delete"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
